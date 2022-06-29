@@ -1,0 +1,190 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>PAYAL JEWELLERS &amp; CASTING</title>
+    <link href="xhtml-css/style/style.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 202px;
+            float: left;
+            margin: 0px;
+            padding: 0px 0px 50px 0px;
+            background: #c8c6af;
+            height: 668px;
+        }
+        .style2
+        {
+            margin-left: 0px;
+        }
+        .style3
+        {
+            width: 1039px;
+        }
+        .style4
+        {
+            width: 253px;
+            height: 95px;
+            text-align:center;
+            font-size: larger;
+            font-weight: bold;
+            padding: 0px 0px 0px 0px;
+            float: right;
+            color: White;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    &nbsp;&nbsp;
+    <!--wrapper starts here-->
+    <div id="wrapper" class="style3">
+        <!--header starts here-->
+        <div id="header">
+            <div class="logo">
+                PAYAL              <br />
+                JEWELLERS
+                <br />
+                & CASTING
+            </div>
+            <div class="topMenu">
+                <ul>
+                    <li class="first"><a href="HOME.aspx">HOME</a></li>
+                    <li><a href="ABOUT_US.aspx">ABOUT US</a></li>
+                    <li><a href="CONTACT_US.aspx">CONTACT US</a></li>
+                    <li><a href="ADMIN.aspx">ADMIN</a></li>
+                    <li><a href="SEARCH.aspx">SEARCH </a></li>
+                   <!--- <li><a href="http://www.google.co.in">Google </a></li>-->
+                </ul>
+            </div>
+            <div class="style4" align="center">
+                <br />
+                <asp:LinkButton ID="lnkCart" runat="server" Text="SHOPPING CART" ForeColor="#CCCCCC"
+                    OnClick="lnkCart_Click"></asp:LinkButton>
+                <br />
+                <br />
+                NOW YOU HAVE
+                <asp:Label ID="lblCart" runat="server" Text="0" ForeColor="Orange" ></asp:Label>
+                ITEMS
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="workZone">
+            <!--leftCol starts here-->
+            <div class="leftCol">
+                <div class="picPhone">
+                    <asp:Image ID="imagehome1" src="a3.jpg" runat="server" Height="502px" Width="292px" />
+                </div>
+                <!--featuresContainer starts here-->
+                <br />
+                <div class="featuresContainer">
+                    <h2>
+                        Featuresures</h2>
+                    <div class="featueesText">
+                        <b>WE HAVE ONLY THE 24 CARAT PRODUCT OF THE DIFFERENT KINDS OF CATEGORIES FOR JEWELLERY
+                            PRODUCTS.</b>
+                        <br />
+                        <br />
+                        <span class="learn"><a href="#">
+                            <%--Learn about the Smartphone Bold smartphone features.--%></a></span>
+                    </div>
+                    <div class="specification">
+                        <h2>
+                            Specifications</h2>
+                        <br />
+                        <ul>
+                            <b>
+                                <li>24 CARAT PLAIN GOLD JEWELLERY</li>
+                                <li>A HALLMARK OF GOLD JEWELLERY 916</li>
+                                <li>AN ISO 9001-2000 CERTIFIED TRUST</li>
+                                <li>DIFFERNT CATEGORIES OF PRODUCT</li>
+                                <li>DIFFERNT TYPES OF JEWELLERY </li>
+                                <%--<li>ffffffffffffffffffffffffffffffff</li>
+                            <li>gggggggggggggggggggggggggggggggg</li>--%></b>
+                        </ul>
+                        <br />
+                        <%--<span class="learn"><a href="#">Learn more about the Smartphone Bold smartphone specifications.</a></span>--%>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <!--featuresContainer ends here-->
+                <%--<div class="orderNow">
+                    <a href="#">
+                        <input type="button" value="ORDER NOW" /></a>
+                </div>--%>
+                <div class="clear">
+                </div>
+            </div>
+            <!--leftCol left here-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!--rightCol starts here-->
+            <div class="style1">
+                <div class="devicezone">
+                    <div>
+                   
+                        <div class="deviceheadingcolumn">
+                            <div class="deviceheading">
+                                <b>CATEGORIES</b></div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div class="devicelink">
+                            <ul>
+                                <li><a>
+                                    <asp:DataList ID="DataListLink" runat="server" OnItemCommand="DataListLink_ItemCommand">
+                                        <ItemTemplate>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <li>
+                                                            <asp:LinkButton ID="lnkLink" runat="server" Text='<%#Bind("NAME") %>' CommandArgument='<%#Bind("NAME") %>'></asp:LinkButton></li>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </ItemTemplate>
+                                    </asp:DataList>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="phoneBox1">
+                    <h4>
+                        EARING</h4>
+                    <%-- <div class="aboutText">about New<br />
+          SmartPhone</div>--%>
+                    <asp:Image ID="img1" ImageUrl="~/IMAGE/GOLDEN/EARING/goldearring5.gif" runat="server"
+                        Height="150px" Width="200px" CssClass="style2" />
+                    <%--<div class="phn-img"> <img src="images/col3pic1.png" alt="1" /> </div>--%>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="phoneBox2">
+                    <div class="h4container">
+                        <h4>
+                            SET</h4>
+                    </div>
+                    <asp:Image ID="img2" ImageUrl="~/IMAGE/DIAMOND/SET/diaset5.jpg" runat="server" Height="162px"
+                        Width="202px" />
+                    
+            </div>
+            <!--rightCol ends here-->
+            <!--workZone ends here-->
+            <%--<div class="clear">
+            </div>--%>
+        </div>
+        <%--<div style="text-align: center; color: #FFF;">
+            Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a style="color: #FFF;
+                text-decoration: underline;" href="http://www.stylishtemplate.com">Website Templates</a>.
+        </div>--%>
+        <!--wrapper ends here-->
+    </div>
+    </form>
+</body>
+</html>
